@@ -1,0 +1,365 @@
+/* ----------------------
+   General Reset
+----------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ----------------------
+   Navbar
+----------------------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0077ff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0077ff;
+}
+
+/* ----------------------
+   Banner / Ads
+----------------------- */
+.banner {
+  background-color: #e3f2fd;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+/* ----------------------
+   Header Section
+----------------------- */
+header {
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #0077ff;
+}
+
+header p {
+  font-size: 18px;
+  color: #555;
+}
+
+
+/* ----------------------
+   Demo Before & After
+----------------------- */
+.demo-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f0f4f8;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.demo-container .before,
+.demo-container .after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.demo-container img {
+  border-radius: 8px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.arrow span {
+  font-size: 48px;
+  color: #0077ff;
+  display: inline-block;
+  animation: arrowBounce 1s infinite alternate;
+  margin: 0 10px;
+}
+
+@keyframes arrowBounce {
+  from { transform: translateX(0); }
+  to { transform: translateX(15px); }
+}
+
+/* Responsive tweak */
+@media screen and (max-width: 768px) {
+  .demo-container {
+    flex-direction: column;
+  }
+
+  .arrow span {
+    transform: rotate(90deg);
+    margin: 15px 0;
+  }
+}
+
+
+
+
+/* ----------------------
+   Upload Area
+----------------------- */
+.upload-area {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.upload-box {
+  border: 2px dashed #0077ff;
+  border-radius: 10px;
+  padding: 50px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.upload-box:hover {
+  background-color: #e3f2fd;
+  border-color: #0056b3;
+}
+
+.upload-box input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#downloadBtn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+#downloadBtn:hover:enabled {
+  opacity: 1;
+  background-color: #0056b3;
+}
+
+#downloadBtn:disabled {
+  cursor: not-allowed;
+}
+
+/* ----------------------
+   Sections
+----------------------- */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 28px;
+  color: #0077ff;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 16px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* ----------------------
+   About Section (Expanded)
+----------------------- */
+#about {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#about h2 {
+  font-size: 32px;
+  color: #0077ff;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#about p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* Add subtle fade-in animation for SEO-friendly UX */
+#about p {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.2s;
+}
+
+#about p:nth-child(2) { animation-delay: 0.4s; }
+#about p:nth-child(3) { animation-delay: 0.6s; }
+#about p:nth-child(4) { animation-delay: 0.8s; }
+#about p:nth-child(5) { animation-delay: 1s; }
+#about p:nth-child(6) { animation-delay: 1.2s; }
+#about p:nth-child(7) { animation-delay: 1.4s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ----------------------
+   Section General Improvements
+----------------------- */
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  font-size: 28px;
+  color: #0077ff;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 16px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+}
+
+/* ----------------------
+   Responsive Tweaks
+----------------------- */
+@media screen and (max-width: 768px) {
+  #about {
+    padding: 40px 15px;
+    text-align: left;
+  }
+
+  #about h2 {
+    font-size: 26px;
+  }
+
+  #about p {
+    font-size: 15px;
+  }
+}
+
+
+/* Processing spinner for After image */
+.after .spinner {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #0077ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 50px auto; /* center */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Optional: hide original image while processing */
+.after img.processing {
+  display: none;
+}
+
+
+
+
+/* ----------------------
+   Footer (Optional)
+----------------------- */
+footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ----------------------
+   Responsive
+----------------------- */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 10px 20px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .upload-box {
+    padding: 40px 15px;
+  }
+}
